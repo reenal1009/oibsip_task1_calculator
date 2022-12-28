@@ -1,0 +1,174 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+    <meta charset="utf-8">  
+    <title>  
+         Calculator 
+    </title>  
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">   
+    <style>  
+body    
+{    
+    background-image: linear-gradient(275deg, #FFFF 0%, #FFD700 80%);    
+}    
+.b01   
+{    
+    background-color: #4682b4 ;    
+    height: 350px;    
+    width: 270px;        
+    position: relative;    
+    top: 80px;    
+    left: 40%; 
+    border-radius: 3%;   
+}   
+.display    
+{    
+    background-color: black;    
+    width: 220px;    
+    position: relative;    
+    left: 15px;    
+    top: 20px;    
+    height: 40px;    
+}    
+.display input    
+{    
+    position: relative;    
+    left: 2px;    
+    top: 2px;    
+    height: 35px;    
+    color: black;    
+    background-color: white;    
+    font-size: 20px;
+    font-family: 'Cambria';
+    font-weight: bold;  
+    text-align: right;    
+}   
+.keys    
+{    
+    position: relative;    
+    top: 15px;    
+}    
+.button    
+{    
+    width: 40px;    
+    height: 40px;    
+    border: none;        
+    margin-left: 20px;    
+    cursor: pointer;        
+}
+
+.button.one   
+{    
+    color: black;  
+    font-size: 20px;
+    background-color: burlywood;    
+    border-bottom:brown 2px solid;    
+    border-top: 2px black; 
+    border-radius: 40%;
+  
+}     
+    
+.button.two   
+{    
+    color: black;
+    font-size:20px;    
+    background-color: greenyellow;    
+    border-bottom: black 2px solid; 
+    border-radius: 40%;   
+}    
+.button.thr    
+{    
+    color: black;
+    font-size:20px;    
+    background-color: whitesmoke;    
+    border-bottom: black 2px solid;    
+    border-top: 2px whitesmoke solid;    
+    font-weight: bold; 
+    box-shadow: darkgrey 2px 2px ; 
+}    
+.button.for   
+{    
+    color: black;
+    font-size:20px;     
+    background-color: red;    
+    border-bottom: black 2px solid;    
+    border-top: 2px red solid;    
+}    
+.one:active    
+{    
+    border-top: black 3px solid;    
+    border-bottom: 3px brown solid;    
+}    
+.two:active    
+{    
+    border-top:black 3px solid;    
+    border-bottom:greenyellow 3px solid;    
+}    
+.thr:active    
+{    
+    border-top: black 3px solid;    
+    border-bottom: black 3px solid;    
+}    
+.for:active    
+{    
+    border-top: black 3px solid;    
+    border-bottom: black 3px solid;    
+}    
+p    
+{    
+    line-height: 10px;    
+}   
+</style>  
+</head>  
+<body>  
+      
+    <div class="b01">    
+        <div class="display">  
+        <input type="text" readonly size="18" id="b">  
+        </div>    
+        <div class="keys">    
+               <p> <input type="button" class="button one" value="(" onclick='v("(")'>  
+               <input type="button" class="button one" value=")" onclick='v(")")'>  
+               <input type="button" class="button one" value="<" onclick='v("<")'>  
+               <input type="button" class="button two" value="+" onclick='v("+")'> </p>    
+               <p> <input type="button" class="button thr" value="1" onclick='v("1")'>  
+               <input type="button" class="button thr" value="2" onclick='v("2")'>  
+               <input type="button" class="button thr" value="3" onclick='v("3")'>  
+               <input type="button" class="button two" value="-" onclick='v("-")'> </p>    
+               <p> <input type="button" class="button thr" value="4" onclick='v("4")'>  
+               <input type="button" class="button thr" value="5" onclick='v("5")'>  
+               <input type="button" class="button thr" value="6" onclick='v("6")'>  
+               <input type="button" class="button two" value="*" onclick='v("*")'> </p>    
+               <p> <input type="button" class="button thr" value="7" onclick='v("7")'>  
+               <input type="button" class="button thr" value="8" onclick='v("8")'>  
+               <input type="button" class="button thr" value="9" onclick='v("9")'>  
+               <input type="button" class="button two" value="/" onclick='v("/")'> </p>    
+               <p> <input type="button" class="button thr" value="C" onclick='c("")'>   
+               <input type="button" class="button thr" value="0" onclick='v("0")'>  
+               <input type="button" class="button thr" value="." onclick='v(".")'>  
+               <input type="button" class="button for" value="=" onclick='e()'> </p>    
+        </div>    
+        </div>   
+        </body>  
+        <script>  
+             function c(val)    
+                {    
+                document.getElementById("b").value=val;    
+                }    
+            function v(val)    
+                {
+                    document.getElementById("b").value+=val;    
+                }    
+            function e()    
+                {    
+                try    
+                    {    
+                        c(eval(document.getElementById("b").value))    
+                    }    
+                    catch(e)    
+                    {    
+                        c('Error') 
+                    }    
+                }  
+        </script>  
+        </html>  
